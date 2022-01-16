@@ -24,14 +24,14 @@ const sectionData = [
   },
   {
     title: "Womens",
-    imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
+    imageUrl: "https://i.ibb.co/LR7RbBw/pexels-wendy-wei-2820810.jpg",
     size: "large",
     id: 4,
     linkUrl: "shop/womens",
   },
   {
     title: "Mens",
-    imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
+    imageUrl: "https://i.ibb.co/8rXP7kM/pexels-allan-franca-carmo-3133688.jpg",
     size: "large",
     id: 5,
     linkUrl: "shop/mens",

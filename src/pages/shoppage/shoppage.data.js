@@ -54,6 +54,12 @@ const SHOP_DATA = [
           "https://i.ibb.co/zQhTwd8/pexels-the-happiest-face-1225136.jpg",
         price: 220,
       },
+      {
+        id: 4,
+        name: "Adidas Superstrs",
+        imageUrl: "https://i.ibb.co/Qp8Q0XX/pexels-matthew-barra-812875.jpg",
+        price: 230,
+      },
     ],
   },
   {
@@ -66,6 +72,24 @@ const SHOP_DATA = [
         name: "Puma Original",
         imageUrl: "https://i.ibb.co/cFmDVQZ/pexels-suraj-b-2759785.jpg",
         price: 220,
+      },
+      {
+        id: 2,
+        name: "Puma Black&White",
+        imageUrl: "https://i.ibb.co/FstYs0W/pexels-deybson-mallony-9537461.jpg",
+        price: 280,
+      },
+      {
+        id: 3,
+        name: "Puma Tresor",
+        imageUrl: "https://i.ibb.co/hmkhQrD/pexels-hipkicks-6777974.jpg",
+        price: 180,
+      },
+      {
+        id: 4,
+        name: "Puma Weak",
+        imageUrl: "https://i.ibb.co/V9tLLb6/pexels-hipkicks-6777980.jpg",
+        price: 350,
       },
     ],
   },
