@@ -1,68 +1,66 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/FormInput";
 import CustomButton from "../customButton/CustomButton";
-import { auth, createUserProfileDocument } from "../../firebase/Firebase";
+import { useAuth } from "../../context/AuthContext";
 import "./SignUp.styles.scss";
 
 const SignUp = () => {
-  const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [username, setUsername] = useState("");
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    if (password !== confirmPassword) {
-      alert("password do not match");
-    }
+  const { register } = useAuth();
 
-    try {
-      const { user } = await auth.createUserWithEmailAndPassword(
-        email,
-        password
-      );
-      await createUserProfileDocument(user, { displayName });
-      setEmail("");
-      setPassword("");
-      setDisplayName("");
-      setConfirmPassword("");
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
-  const handleChange = (event) => {
+  const handleChangeEmail = (event) => {
     setEmail(event.target.value);
-    setPassword(event.target.value);
-    setDisplayName(event.target.value);
-    setConfirmPassword(event.target.value);
   };
+  const handleChangeUsername = (event) => {
+    setUsername(event.target.value);
+  };
+  const handleChangePassword = (e) => {
+    setPassword(e.target.value);
+  };
+  const handleChangeConfPassword = (e) => {
+    setConfirmPassword(e.target.value);
+  };
+
   return (
     <div className="sign-up">
       <h2 className="title">I don't have a account</h2>
       <span>Sign up with your email and password</span>
-      <form className="sign-up-form" onSubmit={handleSubmit}>
+      <form
+        className="sign-up-form"
+        onSubmit={async (e) => {
+          e.preventDefault();
+          register(email, password)
+            .then((response) => console.log(response))
+            .catch((error) => console.log(error));
+        }}
+      >
         <FormInput
           type="text"
-          name="displayName"
-          value={displayName}
-          onChange={handleChange}
+          name="username"
+          value={username}
+          onChange={handleChangeUsername}
           label="Username"
           required
         ></FormInput>
         <FormInput
-          type="email"
+          type="text"
           name="email"
           value={email}
-          onChange={handleChange}
+          onChange={handleChangeEmail}
           label="Email"
           required
         ></FormInput>
         <FormInput
           type="password"
           name="password"
+          pattern=".{8,}"
+          title="8 characters minimum"
+          onChange={handleChangePassword}
           value={password}
-          onChange={handleChange}
           label="Password"
           required
         ></FormInput>
@@ -70,7 +68,9 @@ const SignUp = () => {
           type="password"
           name="confirmPassword"
           value={confirmPassword}
-          onChange={handleChange}
+          pattern=".{8,}"
+          title="8 characters minimum"
+          onChange={handleChangeConfPassword}
           label="Confirm Password"
           required
         ></FormInput>
