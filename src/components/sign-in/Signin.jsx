@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import FormInput from "../form-input/FormInput";
 import CustomButton from "../../components/customButton/CustomButton";
 import "./Signin.styles.scss";
-import { auth } from "../../firebase/Firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
 import { useAuth } from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
 
@@ -11,7 +9,7 @@ const Signin = () => {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const login = useAuth();
+  const { login, signInWithGoogle } = useAuth();
   const handleEmail = (event) => {
     setEmail(event.target.value);
   };
@@ -47,7 +45,9 @@ const Signin = () => {
         />
         <div className="buttons">
           <CustomButton type="submit"> Sign in </CustomButton>
-          <CustomButton type="button">Sign In With Google</CustomButton>
+          <CustomButton onClick={() => signInWithGoogle()} type="button">
+            Sign In With Google
+          </CustomButton>
         </div>
       </form>
     </div>

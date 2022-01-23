@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React from "react";
 import HomePage from "./pages/homepage/homepage";
 import ShopPage from "./pages/shoppage/shoppage";
 import Header from "./components/header/Header";
 import Signinandsignup from "./pages/signin-and-signup/Signin-and-signup";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import AuthContextProvider from "./context/AuthContext";
 
 function App() {
