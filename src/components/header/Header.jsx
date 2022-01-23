@@ -1,11 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
 import { GiWaveCrest } from "react-icons/gi";
-import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { useAuth } from "../../context/AuthContext";
+import CartIcon from "../../components/cart-icon/CartIcon";
+import CartDropdown from "../../components/cart-dropdown/CartDropdown";
 import "./Header.styles.scss";
 
-const Header = () => {
+const Header = ({ hidden }) => {
   const { currentUser } = useAuth();
   const { logout } = useAuth();
   return (
@@ -30,9 +32,15 @@ const Header = () => {
             SIGN IN
           </Link>
         )}
+        <CartIcon />
       </div>
+      {hidden ? null : <CartDropdown />}
     </div>
   );
 };
 
-export default Header;
+const mapStateTopProps = ({ cart: { hidden } }) => ({
+  hidden,
+});
+
+export default connect(mapStateTopProps)(Header);
