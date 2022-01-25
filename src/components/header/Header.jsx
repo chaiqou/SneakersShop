@@ -13,7 +13,7 @@ const Header = ({ hidden }) => {
   return (
     <div className="header">
       <Link className="logo-container" to="/">
-        <GiWaveCrest color="blue" fontSize="1.8em" />
+        <GiWaveCrest color="black" fontSize="1.8em" />
       </Link>
       <div className="options">
         <Link className="option" to="/shop">
