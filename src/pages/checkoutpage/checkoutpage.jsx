@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import {selectCartItems,selectCartTotal} from '../../redux/cart/cart.selectors'
 import CheckoutItem from '../../components/checkout-item/checkoutItem.jsx'
-
+import StripeCheckoutButton from '../../components/stripe-button/stripe-button'
 
 const CheckoutPage = ({ total,cartItems }) => (
   <div className='checkout-page'>
@@ -28,6 +28,14 @@ const CheckoutPage = ({ total,cartItems }) => (
       <CheckoutItem key={cartItem.id} cartItem={cartItem} />
     ))}
     <div className='total'>TOTAL: ${total}</div>
+    <div className='test-warning'>Please use the following test credit card for payments
+    <br />
+    AMERICAN EXPRESS: 3782 822463 10005 - EXP: 01/23 - CVC: 777
+    MASTERCARD: 5555 5555 5555 4444 - EXP: 01/23 - CVC: 888
+    </div>
+    
+
+    <StripeCheckoutButton price={total} />
   </div>
 );
 

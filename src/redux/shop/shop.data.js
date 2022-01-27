@@ -1,8 +1,8 @@
-const SHOP_DATA = [
-  {
+const SHOP_DATA = {
+  nike: {
     id: 1,
-    title: "Nike",
-    routeName: "Nike",
+    title: "nike",
+    routeName: "nike",
     items: [
       {
         id: 1,
@@ -30,10 +30,10 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  adidas: {
     id: 2,
-    title: "Adidas",
-    routeName: "Adidas",
+    title: "adidas",
+    routeName: "adidas",
     items: [
       {
         id: 5,
@@ -62,10 +62,10 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  puma: {
     id: 3,
-    title: "Puma",
-    routeName: "Puma",
+    title: "puma",
+    routeName: "puma",
     items: [
       {
         id: 9,
@@ -93,9 +93,9 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  womens: {
     id: 4,
-    title: "Womens",
+    title: "womens",
     routeName: "womens",
     items: [
       {
@@ -142,9 +142,9 @@ const SHOP_DATA = [
       },
     ],
   },
-  {
+  mens: {
     id: 5,
-    title: "Mens",
+    title: "mens",
     routeName: "mens",
     items: [
       {
@@ -185,6 +185,6 @@ const SHOP_DATA = [
       },
     ],
   },
-];
+};
 
 export default SHOP_DATA;
