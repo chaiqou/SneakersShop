@@ -1,13 +1,23 @@
 import React from "react";
 import Directory from "../../components/directory/directory";
+import styled from 'styled-components'
 
-// import styles
-import "../homepage/homepage.styles.scss";
+
+
+const StyledHomepage = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px 80px;
+`
+
+
+
 function homePage() {
   return (
-    <div className="homepage">
+    <StyledHomepage>
       <Directory />
-    </div>
+    </StyledHomepage>
   );
 }
 
