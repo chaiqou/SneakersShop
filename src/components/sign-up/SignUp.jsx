@@ -2,7 +2,19 @@ import React, { useState } from "react";
 import FormInput from "../form-input/FormInput";
 import CustomButton from "../customButton/CustomButton";
 import { useAuth } from "../../context/AuthContext";
-import "./SignUp.styles.scss";
+import styled from 'styled-components'
+
+const StyledSignUp = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 380px;
+
+`
+
+const StyledTitle = styled.h2`
+  margin: 10px 0;
+
+`
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -26,8 +38,8 @@ const SignUp = () => {
   };
 
   return (
-    <div className="sign-up">
-      <h2 className="title">I don't have a account</h2>
+    <StyledSignUp>
+      <StyledTitle>I don't have a account</StyledTitle>
       <span>Sign up with your email and password</span>
       <form
         className="sign-up-form"
@@ -76,7 +88,7 @@ const SignUp = () => {
         ></FormInput>
         <CustomButton type="submit">SIGN UP</CustomButton>
       </form>
-    </div>
+    </StyledSignUp>
   );
 };
 

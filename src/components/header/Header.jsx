@@ -54,9 +54,7 @@ const Header = ({ hidden }) => {
         <StyledOptionLink to="/shop">
           SHOP
         </StyledOptionLink>
-        <StyledOptionLink  to="/contact">
-          CONTACT
-        </StyledOptionLink>
+       
         {currentUser && (
           <StyledOptionLink as='div' to="/" onClick={() => logout()} className="option">
             SIGN OUT

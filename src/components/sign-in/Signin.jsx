@@ -1,9 +1,24 @@
 import React, { useState } from "react";
 import FormInput from "../form-input/FormInput";
 import CustomButton from "../../components/customButton/CustomButton";
-import "./Signin.styles.scss";
 import { useAuth } from "../../context/AuthContext";
 import { useHistory } from "react-router-dom";
+import styled from 'styled-components';
+
+const SignInContainer = styled.div`
+  width: 380px;
+  display: flex;
+  flex-direction: column;
+`;
+
+const SignInTitle = styled.h2`
+  margin: 10px 0;
+`;
+
+const ButtonsBarContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
 
 const Signin = () => {
   const history = useHistory();
@@ -18,8 +33,8 @@ const Signin = () => {
   };
 
   return (
-    <div className="sign-in">
-      <h1>I already have an account</h1>
+    <SignInContainer>
+      <SignInTitle>I already have an account</SignInTitle>
       <span>Sign in with your email and password</span>
       <form
         onSubmit={async (e) => {
@@ -43,14 +58,14 @@ const Signin = () => {
           value={password}
           name="password"
         />
-        <div className="buttons">
+        <ButtonsBarContainer>
           <CustomButton type="submit"> Sign in </CustomButton>
           <CustomButton onClick={() => signInWithGoogle()} type="button">
             Sign In With Google
           </CustomButton>
-        </div>
+        </ButtonsBarContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 };
 

@@ -3,8 +3,15 @@ import MenuItem from "../menu-item/menu-item";
 import {connect} from 'react-redux'
 import {createStructuredSelector} from 'reselect'
 import {selectDirectorySection} from '../../redux/directory/directory.selectors'
-// import styles
-import "../directory/directory.styles.scss";
+import styled from 'styled-components'
+
+const DirectoryContainer = styled.div`
+ width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+`
 
 
 
@@ -12,11 +19,11 @@ const Directory = ({sections}) => {
   
   return (
     <>
-      <div className="directory-menu">
+      <DirectoryContainer>
         {sections.map(({id , ...otherProps }) => (
           <MenuItem  key={id} {...otherProps} />
         ))}
-      </div>
+      </DirectoryContainer>
     </>
   );
 };

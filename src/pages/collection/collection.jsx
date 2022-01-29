@@ -8,7 +8,7 @@ const CollectionPage = ({ collection }) => {
   console.log(collection)
   return (
     <div>
-    test
+     WORKING
     </div>
   );
 };
