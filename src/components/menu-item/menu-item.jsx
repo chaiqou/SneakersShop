@@ -68,7 +68,7 @@ const ContentSubtitle = styled.span`
 const MenuItem = ({ title, imageUrl, size, history,  linkUrl, match }) => {
    
 
-  return (<MenuItemContainer size={size} onClick={() => history.push(`${match.url}${linkUrl}`)}>
+  return (<MenuItemContainer size={size} onClick={() => history.push('/shop')}>
      <BackgroundImageContainer
       className='background-image'
       imageUrl={imageUrl}
