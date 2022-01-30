@@ -6,11 +6,13 @@ import CheckoutPage from "./pages/checkoutpage/checkoutpage";
 import Signinandsignup from "./pages/signin-and-signup/Signin-and-signup";
 import { Switch, Route } from "react-router-dom";
 import AuthContextProvider from "./context/AuthContext";
+import {GlobalStyle} from './global.styles'
 
 
 function App() {
   return (
     <div>
+    <GlobalStyle>
       <Header />
       <AuthContextProvider>
         <Switch>
@@ -20,6 +22,7 @@ function App() {
           <Route path="/signin" component={Signinandsignup} />
         </Switch>
       </AuthContextProvider>
+      </GlobalStyle>
     </div>
   );
 }
